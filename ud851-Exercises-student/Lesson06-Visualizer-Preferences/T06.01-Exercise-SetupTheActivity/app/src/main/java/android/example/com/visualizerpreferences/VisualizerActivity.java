@@ -128,10 +128,14 @@ public class VisualizerActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Context context = VisualizerActivity.this;
-        Class destinationActivity = SettingsActivity.class;
-        Intent startSettingsActivityIntent = new Intent(context,destinationActivity);
-        startActivity(startSettingsActivityIntent);
+        int id = item.getItemId();
+        if(id == R.id.action_settings) {
+            Context context = this;
+            Class destinationActivity = SettingsActivity.class;
+            Intent startSettingsActivityIntent = new Intent(context, destinationActivity);
+            startActivity(startSettingsActivityIntent);
+            return true;
+        }
         return super.onOptionsItemSelected(item);
     }
 
