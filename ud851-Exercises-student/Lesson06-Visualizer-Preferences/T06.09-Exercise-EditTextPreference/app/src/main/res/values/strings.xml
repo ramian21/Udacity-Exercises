@@ -30,6 +30,15 @@
     <!-- Label for the color preference -->
     <string name="pref_color_label">Shape Color</string>
 
+    <!--Label for the size preference-->
+    <string name="pref_size_label">Size Multiplier</string>
+
+    <!--Key for the size preference-->
+    <string name="pref_size_key" translatable="false">size</string>
+
+    <!--Value for the size preference-->
+    <string name="pref_size_value" translatable="false">1</string>
+
     <!-- Label for red color preference -->
     <string name="pref_color_label_red">Red</string>
     <!-- Label for blue color preference -->
