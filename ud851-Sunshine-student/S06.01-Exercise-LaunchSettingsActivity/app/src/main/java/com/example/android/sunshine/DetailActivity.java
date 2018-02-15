@@ -1,5 +1,6 @@
 package com.example.android.sunshine;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.ShareCompat;
@@ -55,5 +56,17 @@ public class DetailActivity extends AppCompatActivity {
         return true;
     }
 
-    // TODO (7) Launch SettingsActivity when the Settings option is clicked
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            Context context = this;
+            Class destinationActivity = SettingsActivity.class;
+            Intent intent = new Intent(context, destinationActivity);
+            startActivity(intent);
+        }
+         return super.onOptionsItemSelected(item);
+    }
+
+    // COMPLETED (7) Launch SettingsActivity when the Settings option is clicked
 }
