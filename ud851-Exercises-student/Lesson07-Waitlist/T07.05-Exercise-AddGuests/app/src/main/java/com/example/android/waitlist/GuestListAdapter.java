@@ -19,8 +19,9 @@ public class GuestListAdapter extends RecyclerView.Adapter<GuestListAdapter.Gues
 
     /**
      * Constructor using the context and the db cursor
+     *
      * @param context the calling context/activity
-     * @param cursor the db cursor with waitlist data to display
+     * @param cursor  the db cursor with waitlist data to display
      */
     public GuestListAdapter(Context context, Cursor cursor) {
         this.mContext = context;
@@ -57,13 +58,23 @@ public class GuestListAdapter extends RecyclerView.Adapter<GuestListAdapter.Gues
         return mCursor.getCount();
     }
 
-    // TODO (15) Create a new function called swapCursor that takes the new cursor and returns void
 
-    // TODO (16) Inside, check if the current cursor is not null, and close it if so
+    public void swapCursor(Cursor cursor) {
+        if (mCursor == null) {
+            mCursor.close();
+        }
+        mCursor = cursor;
+        if (mCursor != null) {
+            this.notifyDataSetChanged();
+        }
+    }
+    // COMPLETED (15) Create a new function called swapCursor that takes the new cursor and returns void
 
-    // TODO (17) Update the local mCursor to be equal to  newCursor
+    // COMPLETED (16) Inside, check if the current cursor is not null, and close it if so
 
-    // TODO (18) Check if the newCursor is not null, and call this.notifyDataSetChanged() if so
+    // COMPLETED (17) Update the local mCursor to be equal to  newCursor
+
+    // COMPLETED (18) Check if the newCursor is not null, and call this.notifyDataSetChanged() if so
 
     /**
      * Inner class to hold the views needed to display a single item in the recycler-view
