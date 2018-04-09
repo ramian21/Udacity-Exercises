@@ -94,7 +94,11 @@ public class NotificationUtils {
 
     private static PendingIntent contentIntent(Context context) {
         Intent intent = new Intent(context, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(context, PENDING_INTENT_ID, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getActivity(
+                context,
+                PENDING_INTENT_ID,
+                intent,
+                PendingIntent.FLAG_UPDATE_CURRENT);
         return pendingIntent;
     }
 
