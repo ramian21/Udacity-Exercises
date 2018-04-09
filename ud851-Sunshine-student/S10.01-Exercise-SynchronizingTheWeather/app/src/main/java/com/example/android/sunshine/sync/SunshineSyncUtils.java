@@ -13,6 +13,6 @@ public class SunshineSyncUtils {
 
     public static void startImmediateSync(Context context) {
         Intent intent = new Intent(context, SunshineSyncIntentService.class);
-        context.startActivity(intent);
+        context.startService(intent);
     }
 }
